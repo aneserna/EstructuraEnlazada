@@ -30,23 +30,56 @@ public class UnorderedCircularLinkedListTest {
 
 	@Test
 	public void testAddToFront() {
+		l0.addToFront(22);
+		assertEquals(l0.size(),1);
+		assertTrue(l0.first()==22); 
 		
+		l1.addToFront(4);
+		assertEquals(l1.size(),2);
+		assertTrue(l1.first()==4);
+		assertTrue(l1.contains(4));
+		
+		l2.addToFront(7);
+		assertEquals(l2.size(),3);
+		assertTrue(l2.contains(7));
+		assertTrue(l2.first()==7);
+		
+		l3.addToFront(2);
+		assertEquals(l3.size(),5);
+		assertTrue(l3.contains(2));
+		assertTrue(l3.first()==2);
 	}
 
 	@Test
 	public void testAddToRear() {
-		fail("Not yet implemented");
+		l0.addToRear(9);
+		assertEquals(l0.size(),1);
+		assertTrue(l0.contains(9));
+		assertTrue(l0.last()==9);
+		
+		l1.addToRear(4); 
+		assertEquals(l1.size(),2);
+		assertTrue(l1.contains(4));
+		assertTrue(l1.last()==4);
+		
+		l2.addToRear(7);
+		assertEquals(l2.size(),3);
+		assertTrue(l2.contains(7));
+		
+		l3.addToRear(2);
+		assertEquals(l3.size(),5);
+		assertTrue(l3.contains(2));
 	}
 
 	@Test
 	public void testAddAfter() {
-		/*Lista vacÌa: el elemento no se aÒade.
+		/*Lista vac√≠a: el elemento no se a√±ade.
 		Lista de un elemento:
-		El elemento es el target: se aÒade.
-		El elemento no es target: no se aÒade
+		El elemento es el target: se a√±ade.
+		El elemento no es target: no se a√±ade
 		Lista de varios elementos:
-		Target no est· en la lista: no se aÒade
-		Target est·:
+		Target no est√° en la lista: no se a√±ade
+		Target est√°:
 		Al principio
 		En el centro
 		Al final
