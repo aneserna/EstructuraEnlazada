@@ -50,7 +50,7 @@ public class CircularLinkedListTest {
 
 	@Test
 	public void testRemoveFirst() {
-		/*Casos de prueba: Lista de un elemento-> Lista vacía.
+		/*Casos de prueba: Lista de un elemento-> Lista vacÃ­a.
 		 * 				   Lista de dos elementos -> Lista de un elemento.
 		 * 				   Lista de varios elementos-> Lista sin el primer elemento.
 		 */
@@ -70,16 +70,24 @@ public class CircularLinkedListTest {
 	public void testRemoveLast() {
 		l1.removeLast();
 		assertEquals(l1.size(),0);
+		
+		l2.removeLast();
+		assertEquals(l2.size(),1);
+		assertFalse(l2.contains(3));
+		
+		l3.removeLast();
+		assertEquals(l3.size(),3);
+		assertFalse(l2.contains(6));
 	}
 
 	@Test
 	public void testRemove() {
-		/*Casos de prueba: Lista de un elemento-> El elemento está:Lista vacía.
-		 * 										-> El elemento no está: no cambia la lista.
-		 * 				   Lista de dos elementos -> El elemento está:Lista de un elemento.
-		 * 										  -> El elemento no está: no cambia la lista.
-		 * 				   Lista de varios elementos->El elemento está:Lista sin el elemento.
-		 * 										  -> El elemento no está: no cambia la lista.
+		/*Casos de prueba: Lista de un elemento-> El elemento estÃ¡:Lista vacÃ­a.
+		 * 										-> El elemento no estÃ¡: no cambia la lista.
+		 * 				   Lista de dos elementos -> El elemento estÃ¡:Lista de un elemento.
+		 * 										  -> El elemento no estÃ¡: no cambia la lista.
+		 * 				   Lista de varios elementos->El elemento estÃ¡:Lista sin el elemento.
+		 * 										  -> El elemento no estÃ¡: no cambia la lista.
 		 */
 		
 		assertNull(l1.remove(2));
@@ -114,23 +122,29 @@ public class CircularLinkedListTest {
 
 	@Test
 	public void testFirst() {
-		fail("Not yet implemented");
+		assertTrue(l0.first()==null);
+		assertSame(l1.first(),1);
+		assertSame(l2.first(),3);
+		assertSame(l3.first(),3);
 	}
 
 	@Test
 	public void testLast() {
-		fail("Not yet implemented");
+		assertTrue(l0.last()==null);
+		assertSame(l1.last(),1);
+		assertSame(l2.last(),4);
+		assertSame(l3.last(),6);
 	}
 
 	@Test
 	public void testContains() {
-		/*Casos de prueba: Lista vacía.
-		 * 					Lista de un elemento-> El elemento está:True.
-		 * 										-> El elemento no está: False.
-		 * 				   Lista de dos elementos -> El elemento está:True.
-		 * 										  -> El elemento no está: False.
-		 * 				   Lista de varios elementos->El elemento está: True.
-		 * 										  -> El elemento no está: False.
+		/*Casos de prueba: Lista vacÃ­a.
+		 * 					Lista de un elemento-> El elemento estÃ¡:True.
+		 * 										-> El elemento no estÃ¡: False.
+		 * 				   Lista de dos elementos -> El elemento estÃ¡:True.
+		 * 										  -> El elemento no estÃ¡: False.
+		 * 				   Lista de varios elementos->El elemento estÃ¡: True.
+		 * 										  -> El elemento no estÃ¡: False.
 		 */
 		assertFalse(l0.contains(3));
 		
