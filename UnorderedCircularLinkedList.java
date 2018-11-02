@@ -2,7 +2,7 @@
 public class UnorderedCircularLinkedList<T> extends CircularLinkedList<T> implements UnorderedListADT<T> {
 	
 	public void addToFront(T elem) {
-	// añade un elemento al comienzo
+	// aÃ±ade un elemento al comienzo
 		// COMPLETAR EL CODIGO Y CALCULAR EL COSTE
 		Node<T> nuevo=new Node(elem);
 		if(this.last==null){
@@ -18,38 +18,37 @@ public class UnorderedCircularLinkedList<T> extends CircularLinkedList<T> implem
 	}
 
 	public void addToRear(T elem) {
-	// añade un elemento al final 
+	// aÃ±ade un elemento al final 
 		// COMPLETAR EL CODIGO Y CALCULAR EL COSTE
-		Node<T> nuevo=new Node(elem);
-		if(this.last==null){
-			this.last=nuevo;
-			nuevo.next=nuevo;
-			this.count++;
+		Node<T> nuevo=new Node<T>(elem);
+		
+		if (isEmpty()) {
+			last=nuevo;
+			nuevo.next=last;
 		}
-		else{
-		nuevo.next=last.next;
-		last.next=nuevo;
-		this.last=nuevo;
-		this.count++;
+		else {
+			nuevo.next=last.next;
+			last.next=nuevo;
+			last=nuevo;	
 		}
-
+		count=count+1;
 	}
 	
 	public void addAfter(T elem, T target) {
-	// Añade elem detrás de otro elemento concreto, target,  que ya se encuentra en la lista
+	// AÃ±ade elem detrÃ¡s de otro elemento concreto, target,  que ya se encuentra en la lista
 		/* Pre: 
 		 * 
-		 * Post: añade elem detrás de otro elemento concreto de la lista, target. En caso de que target no se
-		 * encuentre en la lista, no se añade elem.
+		 * Post: aÃ±ade elem detrÃ¡s de otro elemento concreto de la lista, target. En caso de que target no se
+		 * encuentre en la lista, no se aÃ±ade elem.
 		 * 
 		 * Casos de prueba:
-		 * 					Lista vacía: el elemento no se añade.
+		 * 					Lista vacÃ­a: el elemento no se aÃ±ade.
 		 * 					Lista 1 elemento:
-		 * 							El elemento que contiene es el target: se añade.
-		 * 							El elemento que contiene no es el target: no se añade
+		 * 							El elemento que contiene es el target: se aÃ±ade.
+		 * 							El elemento que contiene no es el target: no se aÃ±ade
 		 * 					Lista de varios elementos:
-		 * 							Target no está: no se añade
-		 * 							Target está:
+		 * 							Target no estÃ¡: no se aÃ±ade
+		 * 							Target estÃ¡:
 		 * 									Al principio
 		 * 									En el centro
 		 * 									Al final
